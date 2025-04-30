@@ -1,0 +1,60 @@
+:root {
+  --primary: #5fa463;
+  --primary-hover: #4c8a50;
+  --primary-foreground: #ffffff;
+  --muted: #2d3748;
+  --muted-foreground: #a0aec0;
+  --border: #2d3748;
+  --card: #1a202c;
+  --background: #111827;
+  --radius: 0.5rem;
+  --ring: #5fa463;
+  --ring-rgb: 95, 164, 99;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.App {
+  text-align: center;
+  background-color: var(--background);
+  color: var(--primary-foreground);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: var(--card);
+  color: var(--primary-foreground);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: var(--primary);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
