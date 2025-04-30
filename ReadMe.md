@@ -2,19 +2,24 @@
 
 ### Backend (FastAPI)
 
-1. Creează un mediu virtual Python și activează-l:
+1. Navighează în server:
 ```bash
-python -m venv venv
-source venv/bin/activate  # Pe Windows: venv\Scripts\activate
+cd Server
 ```
 
-2. Instalează dependințele:
+2. Creează un mediu virtual Python și activează-l:
 ```bash
-cd backend
+python -m venv venv
+source venv/bin/activate        # Pentru Linux/macOS
+venv\Scripts\activate           # Pentru Windows
+```
+
+3. Instalează dependințele:
+```bash
 pip install -r requirements.txt
 ```
 
-3. Pornește serverul:
+4. Pornește serverul:
 ```bash
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
@@ -25,7 +30,7 @@ Serverul va rula la adresa http://localhost:8000. Poți accesa documentația API
 
 1. Instalează dependințele:
 ```bash
-cd frontend
+cd Client
 npm install
 ```
 
