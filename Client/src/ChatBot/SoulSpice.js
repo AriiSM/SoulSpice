@@ -3,13 +3,13 @@
 import { useState, useRef, useEffect } from "react"
 import { Send } from "react-feather"
 import { processMessage } from "../api/api"
-import "./PB.css"
+import "./SoulSpice.css"
 
-function ChefMind() {
+function SoulSpice() {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Bună! Sunt ChefMind, asistentul tău virtual pentru wellness culinar. Îți pot oferi sfaturi despre mâncare sănătoasă, rețete adaptate stării tale emoționale și tehnici de mindful eating. Cum te simți azi sau ce poftă de mâncare ai?",
+      text: "Bună! Sunt SoulSpice, asistentul tău virtual pentru wellness culinar. Îți pot oferi sfaturi despre mâncare sănătoasă, rețete adaptate stării tale emoționale și tehnici de mindful eating. Cum te simți azi sau ce poftă de mâncare ai?",
       sender: "bot",
       timestamp: new Date().toISOString(),
     },
@@ -97,12 +97,12 @@ function ChefMind() {
   const quickEmojis = ["😊", "😋", "🍲", "🥗", "🍰", "😢", "🤔", "❤️"]
 
   return (
-    <div className="chefmind-container">
+    <div className="soulspice-container">
       <div className="chat-card">
         <div className="card-header">
           <div className="header-content">
             <div className="title-section">
-              <h2>ChefMind - Psiholog culinar</h2>
+              <h2>SoulSpice - Psiholog culinar</h2>
               <p>
                 Un asistent care îmbină psihologia cu arta culinară pentru a-ți oferi sfaturi personalizate 
                 despre alimentație sănătoasă și rețete adaptate stării tale emoționale.
@@ -155,8 +155,8 @@ function ChefMind() {
 
           <form onSubmit={handleSubmit} className="message-form">
           <input
-            id="chefmind-message-input"
-            name="chefmindMessage"
+            id="soulspice-message-input"
+            name="soulspiceMessage"
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -176,4 +176,4 @@ function ChefMind() {
   )
 }
 
-export default ChefMind
+export default SoulSpice

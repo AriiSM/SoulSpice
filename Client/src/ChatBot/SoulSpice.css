@@ -1,4 +1,4 @@
-.chefmind-container {
+.soulspice-container {
     max-width: 1000px;
     margin: 0 auto;
     height: 100%;
@@ -291,7 +291,7 @@
   
   /* Responsive adjustments */
   @media (max-width: 768px) {
-    .chefmind-container {
+    .soulspice-container {
       padding: 0 1rem;
     }
     

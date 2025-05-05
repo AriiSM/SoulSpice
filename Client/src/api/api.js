@@ -1,4 +1,4 @@
-// api.js - Simplificat pentru ChefMind
+// api.js - Simplificat pentru SoulSpice
 import axios from 'axios';
 
 const API_URL = 'http://localhost:8000/api';
@@ -20,7 +20,7 @@ const handleApiError = (error, operation) => {
   }
 };
 
-// ChefMind API calls
+// SoulSpice API calls
 export const processMessage = async (messageData) => {
   try {
     if (!messageData) {
