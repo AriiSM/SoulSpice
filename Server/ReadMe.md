@@ -1,6 +1,6 @@
 PROTOTYPE BACKEND STRUCTURE
 
-
+```bash
 SoulSpice_server/
 │
 ├── main.py                      # Main application entry point
@@ -35,3 +35,4 @@ SoulSpice_server/
 └── data/                        # Data storage directory
     ├── knowledge/               # Knowledge base files
     └── vector_db/               # Vector database files
+```
