@@ -4,7 +4,7 @@ PROTOTYPE BACKEND STRUCTURE
 SoulSpice_server/
 │
 ├── main.py                      # Main application entry point
-├── .env                         # Environment variables (create this)
+├── .venv                         # Environment variables (create this)
 │
 ├── app/                         # Application package
 │   ├── __init__.py             

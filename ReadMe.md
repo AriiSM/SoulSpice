@@ -21,7 +21,7 @@ pip install -r requirements.txt
 
 4. Pornește serverul:
 ```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+python main.py
 ```
 
 Serverul va rula la adresa http://localhost:8000. Poți accesa documentația API la http://localhost:8000/docs.
