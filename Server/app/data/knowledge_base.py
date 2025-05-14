@@ -1,3 +1,5 @@
+#ASTA NU E FOLOSITA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 # Knowledge base for food-mood relationships
 FOOD_MOOD_KNOWLEDGE = {
     "fericit": [

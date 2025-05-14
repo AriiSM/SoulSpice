@@ -13,13 +13,17 @@ class Settings(BaseSettings):
     
     # LM Studio settings (to be configured later)
     LM_STUDIO_API_URL: str = "http://localhost:1234/v1"
-    LM_STUDIO_API_KEY: str = ""
+    LM_STUDIO_API_KEY: str = "no-key-needed"
+    LM_STUDIO_MODEL_NAME: str = "mistral"
     
-    # Vector database settings (for FAISS/RAG)
-    VECTOR_DB_PATH: str = "./data/vector_db"
+    # FAISS settings
+    RECIPES_DATASET_PATH: str = "app/data/faiss/parsed_recipes.txt"
+    CONVERSATIONS_DATASET_PATH: str = "app/data/faiss/parsed_conversations.txt"
     
-    # Knowledge base settings
-    KNOWLEDGE_BASE_PATH: str = "./data/knowledge"
+    RECIPES_FAISS_PATH: str = "app/data/faiss/recipes.faiss"
+    CONVERSATIONS_FAISS_PATH: str = "app/data/faiss/conversations.faiss"
+    
+    SEMANTIC_SEARCH_MODEL: str = "all-MiniLM-L6-v2"
     
     class Config:
         env_file = ".env"
