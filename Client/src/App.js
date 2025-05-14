@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import ChefMind from './ChatBot/PB.js';
+import ChefMind from './ChatBot/SoulSpice.js';
 
 function App() {
   return (
