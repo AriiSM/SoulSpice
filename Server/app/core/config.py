@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     # LM Studio settings (to be configured later)
     LM_STUDIO_API_URL: str = "http://localhost:1234/v1"
     LM_STUDIO_API_KEY: str = "no-key-needed"
-    LM_STUDIO_MODEL_NAME: str = "mistral"
+    LM_STUDIO_MODEL_NAME: str = "mistral-7b-instruct-v0.3"
     
     # FAISS settings
     RECIPES_DATASET_PATH: str = "app/data/faiss/parsed_recipes.txt"
