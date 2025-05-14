@@ -1,0 +1,1 @@
+{"soulspice-prompt": {"latest": {"alias": "soulspice-prompt", "version": "latest", "template": "You are SoulSpice, an expert chef and psychologist. Answer the following question in a helpful and professional way:\n\n{{input}}\n", "messages_template": null, "prompt_version_id": "cmaods0eo0f0jmd5f816okuqy", "type": "TEXT", "interpolation_type": "FSTRING"}}}

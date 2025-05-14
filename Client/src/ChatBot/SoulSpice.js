@@ -9,7 +9,7 @@ function SoulSpice() {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Bună! Sunt SoulSpice, asistentul tău virtual pentru wellness culinar. Îți pot oferi sfaturi despre mâncare sănătoasă, rețete adaptate stării tale emoționale și tehnici de mindful eating. Cum te simți azi sau ce poftă de mâncare ai?",
+      text: "😃 Hi! I'm SoulSpice, your virtual assistant for culinary wellness. I can offer you advice on healthy eating, recipes tailored to your emotional state, and mindful eating techniques. How are you feeling today, or what kind of craving do you have?",
       sender: "bot",
       timestamp: new Date().toISOString(),
     },
@@ -74,7 +74,7 @@ function SoulSpice() {
       // Adaugă un mesaj de eroare
       const errorMessage = {
         id: messages.length + 2,
-        text: "Îmi pare rău, am întâmpinat o problemă în procesarea mesajului tău. Te rog să verifici conexiunea la server și să încerci din nou.",
+        text: "⚠️ I'm sorry, I encountered a problem processing your message. Please check your server connection and try again.",
         sender: "bot",
         timestamp: new Date().toISOString(),
       };
@@ -102,10 +102,10 @@ function SoulSpice() {
         <div className="card-header">
           <div className="header-content">
             <div className="title-section">
-              <h2>SoulSpice - Psiholog culinar</h2>
+              <h2>SoulSpice – Culinary Psychologist</h2>
               <p>
-                Un asistent care îmbină psihologia cu arta culinară pentru a-ți oferi sfaturi personalizate 
-                despre alimentație sănătoasă și rețete adaptate stării tale emoționale.
+                An assistant that blends psychology with the culinary arts to 
+                offer you personalized advice on healthy eating and recipes tailored to your emotional state.
               </p>
             </div>
           </div>
@@ -115,7 +115,7 @@ function SoulSpice() {
             {messages.map((message) => (
               <div key={message.id} className={`message ${message.sender === "user" ? "user-message" : "bot-message"}`}>
                 <div className={`avatar ${message.sender === "user" ? "user-avatar" : "bot-avatar"}`}>
-                  {message.sender === "bot" ? "CM" : "Eu"}
+                  {message.sender === "bot" ? "Soul" : "Me"}
                 </div>
                 <div className="message-bubble">
                   <div className="message-text">{message.text}</div>
@@ -160,7 +160,7 @@ function SoulSpice() {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Spune cum te simți sau ce poftă ai..."
+            placeholder="Say how you're feeling or what you're craving..."
             disabled={isTyping}
             className="message-input"
             ref={inputRef}

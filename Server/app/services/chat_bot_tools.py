@@ -1,3 +1,8 @@
+from sentence_transformers import SentenceTransformer
+import faiss
+import numpy as np
+from openai import AsyncOpenAI
+
 class TextChunkLoader:
     def __init__(self, delimiter='==CHUNK END=='):
         self.delimiter = delimiter
@@ -22,9 +27,7 @@ class ToxicityFilter:
         with open(self.log_file, "a", encoding="utf-8") as f:
             f.write(f"[{source.upper()} - Toxicity: {score:.4f}]\n{text}\n\n")
 
-from sentence_transformers import SentenceTransformer
-import faiss
-import numpy as np
+
 
 class SemanticRetriever:
     def __init__(self, model_name, recipe_index_path, conv_index_path, recipe_chunks, conv_chunks):
@@ -42,8 +45,6 @@ class SemanticRetriever:
         recipes = [self.recipe_chunks[i] for i in I1[0]]
         convs = [self.conv_chunks[i] for i in I2[0]]
         return recipes + convs
-
-from openai import AsyncOpenAI
 
 class ResponseGenerator:
     def __init__(self, base_url, api_key, model):
@@ -68,7 +69,12 @@ class SemanticSearchAssistant:
 
     def build_prompt(self, context, question, empathy=False):
         prefix = "Answer with empathy.\n\n" if empathy else ""
-        return f"{prefix}Context:\n{context}\n\nQuestion: {question} \nAnswer:"
+        
+        build_prompt = f"{prefix}Context:{context}\nQuestion: {question} \nAnswer:"
+       
+        # print(f"[INFO] Prompt build: {build_prompt}")
+
+        return build_prompt
 
     async def ask(self, question, k=1, temperature=0.7):
 
