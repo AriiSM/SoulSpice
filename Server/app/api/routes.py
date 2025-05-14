@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException
 from datetime import datetime
 
 from app.models.message import MessageRequest, MessageResponse
@@ -6,12 +6,12 @@ from app.services.chat_service import ChatService
 from app.services.llm_service import LLMService
 
 router = APIRouter()
+llm_service = LLMService()
+chat_service = ChatService(llm_service=llm_service)
 
 @router.post("/process-message", response_model=MessageResponse)
 async def process_message(
-    message: MessageRequest,
-    chat_service: ChatService = Depends(),
-    llm_service: LLMService = Depends()
+    message: MessageRequest
 ):
     """
     Process a user message and generate a response.
@@ -21,9 +21,7 @@ async def process_message(
         raise HTTPException(status_code=400, detail="Mesajul nu poate fi gol")
     
     # Process the message using the chat service
-    response_text = await chat_service.generate_response(message.text, llm_service)
-    
-    # Return the formatted response
+    response_text = await chat_service.generate_response(message.text)
     return MessageResponse(
         text=response_text,
         timestamp=datetime.now().isoformat()

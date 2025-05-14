@@ -1,7 +1,8 @@
 import aiohttp
 import json
 from typing import Dict, Any, List, Optional
-from fastapi import Depends
+from app.services.chat_bot_tools import SemanticSearchAssistant
+from app.services.chat_bot_tools import TextChunkLoader, SemanticRetriever, ToxicityFilter, ResponseGenerator
 
 from app.core.config import settings
 
@@ -9,7 +10,18 @@ class LLMService:
     def __init__(self):
         self.api_url = settings.LM_STUDIO_API_KEY
         self.api_key = settings.LM_STUDIO_API_KEY
-        self._is_available = False
+        self._is_available = True
+        
+        ## Initialize the chatbot with the SemanticSearchAssistant
+        self.loader = TextChunkLoader()
+        self.recipes = self.loader.load_chunks(settings.RECIPES_DATASET_PATH)
+        self.convs = self.loader.load_chunks(settings.CONVERSATIONS_DATASET_PATH)
+
+        self.retriever = SemanticRetriever(settings.SEMANTIC_SEARCH_MODEL, settings.RECIPES_FAISS_PATH, settings.CONVERSATIONS_FAISS_PATH, self.recipes, self.convs)
+        self.toxic = ToxicityFilter()
+        self.responder = ResponseGenerator(settings.LM_STUDIO_API_URL, settings.LM_STUDIO_API_KEY, settings.LM_STUDIO_MODEL_NAME)
+
+        self.assistant = SemanticSearchAssistant(self.retriever, self.responder, self.toxic)
         
     def is_available(self) -> bool:
         """Check if the LLM service is available and configured."""
@@ -24,38 +36,4 @@ class LLMService:
         if not self.is_available():
             raise ValueError("LLM service is not available")
         
-        # This will be implemented to call LM Studio API
-        # Example implementation:
-        async with aiohttp.ClientSession() as session:
-            payload = {
-                "model": "local-model",  # Will be configured based on LM Studio
-                "messages": [
-                    {"role": "system", "content": "Ești SoulSpice, un psiholog culinar care oferă sfaturi despre alimentație și stare emoțională."},
-                    {"role": "user", "content": message}
-                ],
-                "temperature": 0.7,
-                "max_tokens": 500
-            }
-            
-            headers = {
-                "Content-Type": "application/json",
-                "Authorization": f"Bearer {self.api_key}"
-            }
-            
-            try:
-                async with session.post(
-                    f"{self.api_url}/chat/completions", 
-                    json=payload,
-                    headers=headers
-                ) as response:
-                    if response.status == 200:
-                        result = await response.json()
-                        return result["choices"][0]["message"]["content"]
-                    else:
-                        error_text = await response.text()
-                        raise Exception(f"LLM API error: {response.status} - {error_text}")
-            except Exception as e:
-                raise Exception(f"Failed to communicate with LLM API: {str(e)}")
-        
-        # Fallback response if something goes wrong
-        return "Nu am putut genera un răspuns folosind modelul de limbaj. Te rog să încerci din nou."
+        return await self.assistant.ask(message)
