@@ -1,4 +1,4 @@
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer # type: ignore
 import faiss
 import numpy as np
 from openai import AsyncOpenAI

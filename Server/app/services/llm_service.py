@@ -5,7 +5,6 @@ from app.services.chat_bot_tools import SemanticSearchAssistant
 from app.services.chat_bot_tools import TextChunkLoader, SemanticRetriever, ToxicityFilter, ResponseGenerator
 
 from app.core.config import settings
-
 class LLMService:
     def __init__(self):
         self.api_url = settings.LM_STUDIO_API_KEY

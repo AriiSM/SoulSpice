@@ -28,4 +28,12 @@ Thumbs.db
 .cache/
 
 # DeepEval
-*.deep_eval
+.deepeval/
+# Pytest cache
+.cache/
+# Coverage reports
+.coverage
+.coverage.*
+# Pytest cache
+.pytest_cache/
+# Pytest coverage reports   
