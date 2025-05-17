@@ -20,6 +20,8 @@ class ToxicityFilter:
         self.log_file = log_file
 
     def is_toxic(self, text):
+        text = text[:1000]  # aproximează în caractere (alternativ, folosește tokenizer)
+        
         score = self.model(text)[0]['score']
         return score > self.threshold, score
 

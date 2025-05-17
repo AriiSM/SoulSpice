@@ -1,0 +1,148 @@
+// [
+// [INFO] Question1 toxicity: 0.0016
+// [INFO] Attempt 1 - Response toxicity: 0.0007
+
+// [INFO] Question2 toxicity: 0.0041
+// [INFO] Attempt 2 - Response toxicity: 0.0006
+
+// [INFO] Question3 toxicity: 0.0033
+// [INFO] Attempt 3 - Response toxicity: 0.0007
+// ]
+
+[
+  {
+    "input": "What are the emotional benefits of cooking as a family?",
+    "expected_output": "Cooking together strengthens family bonds and promotes emotional wellbeing through shared experiences.",
+    "actual_output": "Cooking as a family can offer numerous emotional benefits. Firstly, it fosters bonding and creates shared memories [...]",
+    "retrieval_context": [
+      "Cooking together strengthens family bonds and promotes emotional wellbeing through shared experiences."
+    ],
+    "metrics": [
+      {
+        "name": "Answer Relevancy",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "The score is 1.00 because the response perfectly addressed the emotional benefits of cooking as a family without any irrelevant statements. Great job on staying focused and relevant!"
+      },
+      {
+        "name": "Faithfulness",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "The score is 1.00 because there are no contradictions, indicating a perfect alignment between the actual output and the retrieval context. Great job maintaining accuracy and consistency!"
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "The score is 1.00 because the statement [...] aligns with the input question [...]"
+      },
+      {
+        "name": "Contextual Precision",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "Perfect alignment with input, prioritizing relevant context."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "Expected output perfectly matches information from context."
+      }
+    ]
+  },
+  {
+    "input": "How can I introduce healthy eating habits to my children?",
+    "expected_output": "Introduce healthy foods gradually, involve children in meal prep, and model healthy eating habits yourself.",
+    "actual_output": "As SoulSpice, an expert chef and psychologist, I'm happy to help you with that! [...]",
+    "retrieval_context": [
+      "Introduce healthy foods gradually, involve children in meal prep, and model healthy eating habits yourself."
+    ],
+    "metrics": [
+      {
+        "name": "Answer Relevancy",
+        "score": 0.96296,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "Slight detraction from core topic due to mentioning identity, otherwise great."
+      },
+      {
+        "name": "Faithfulness",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "Perfect alignment with context."
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "Matches advice on healthy habits perfectly."
+      },
+      {
+        "name": "Contextual Precision",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "Direct response to core context."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "Fully aligned with context."
+      }
+    ]
+  },
+  {
+    "input": "How do I make a healthy smoothie?",
+    "expected_output": "A healthy smoothie can be made using banana, spinach, berries, Greek yogurt, and almond milk.",
+    "actual_output": "As SoulSpice, an expert chef and psychologist, I'm delighted to help you create a healthier smoothie! Here are some tips [...]",
+    "retrieval_context": [
+      "A healthy smoothie can be made using banana, spinach, berries, Greek yogurt, and almond milk."
+    ],
+    "metrics": [
+      {
+        "name": "Answer Relevancy",
+        "score": 0.83333,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "Slightly verbose intro, but core advice is relevant and clear."
+      },
+      {
+        "name": "Faithfulness",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "Accurate match with context."
+      },
+      {
+        "name": "Contextual Relevancy",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "Perfectly aligned with smoothie-making advice."
+      },
+      {
+        "name": "Contextual Precision",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "Details match context precisely."
+      },
+      {
+        "name": "Contextual Recall",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASSED",
+        "reason": "All key points from context captured."
+      }
+    ]
+  }
+]
