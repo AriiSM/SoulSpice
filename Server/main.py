@@ -3,7 +3,14 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
 from app.api.routes import router as api_router
+from app.api import auth_routes
+
 from app.core.config import settings
+
+from app.core.database import Base, engine
+from app.models import user, message
+
+Base.metadata.create_all(bind=engine)
 
 # Create FastAPI application
 app = FastAPI(
@@ -23,6 +30,7 @@ app.add_middleware(
 
 # Include API routes
 app.include_router(api_router, prefix="/api")
+app.include_router(auth_routes.router, prefix="/api")
 
 # Root endpoint for health check
 @app.get("/")

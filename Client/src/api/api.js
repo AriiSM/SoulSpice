@@ -26,7 +26,7 @@ export const processMessage = async (messageData) => {
     if (!messageData) {
       throw new Error("Message data is required");
     }
-
+    // console.log("Trimitem mesajul la API:", messageData);
     const response = await axios.post(`${API_URL}/process-message`, messageData);
     return response.data;
   } catch (error) {
@@ -41,5 +41,36 @@ export const checkApiStatus = async () => {
     return response.data;
   } catch (error) {
     handleApiError(error, 'Check API status');
+  }
+};
+
+// === LOGIN ===
+export const loginUser = async ({ username, password }) => {
+  try {
+    const response = await axios.post(`${API_URL}/login`, { username, password });
+    return response.data;
+  } catch (error) {
+    handleApiError(error, 'Login');
+  }
+};
+
+// === REGISTER ===
+export const registerUser = async ({ username, password }) => {
+  try {
+    const response = await axios.post(`${API_URL}/register`, { username, password });
+    return response.data;
+  } catch (error) {
+    handleApiError(error, 'Register');
+  }
+};
+
+// === CHAT HISTORY ===
+
+export const getChatHistory = async (userId) => {
+  try {
+    const response = await axios.get(`${API_URL}/chat-history/${userId}`);
+    return response.data;
+  } catch (error) {
+    handleApiError(error, 'Get Chat History');
   }
 };
