@@ -30,8 +30,9 @@ async def process_message(
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
 
+    history = db.query(DBMessage).filter(DBMessage.user_id == user.id).order_by(DBMessage.id.desc()).limit(5).all()
     # Process the message using the chat service
-    response_text = await chat_service.generate_response(message.text)
+    response_text = await chat_service.generate_response(message.text, history)
 
     user_msg = DBMessage(role="user", content=message.text, owner=user)
     assistant_msg = DBMessage(role="assistant", content=response_text, owner=user)
