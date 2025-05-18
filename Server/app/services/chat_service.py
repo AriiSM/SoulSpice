@@ -1,5 +1,3 @@
-from app.services.llm_service import LLMService
-
 class ChatService:
     def __init__(
         self,
