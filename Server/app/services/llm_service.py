@@ -1,6 +1,3 @@
-import aiohttp
-import json
-from typing import Dict, Any, List, Optional
 from app.services.chat_bot_tools import SemanticSearchAssistant
 from app.services.chat_bot_tools import TextChunkLoader, SemanticRetriever, ToxicityFilter, ResponseGenerator
 
