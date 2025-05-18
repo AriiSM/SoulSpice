@@ -1,7 +1,6 @@
 .soulspice-container {
     max-width: 1000px;
     margin: 0 auto;
-    height: 100%;
     /* Variabile pentru temă culinară */
     --primary: #5fa463;
     --primary-hover: #4c8a50;

@@ -1,3 +1,7 @@
+pip install fastapi uvicorn sqlalchemy pydantic passlib[bcrypt] python-multipart
+npm install react-router-dom
+
+
 ## Configurare și instalare
 
 ### Backend (FastAPI)
