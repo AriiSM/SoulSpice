@@ -138,6 +138,7 @@ SoulSpice/
 
 ## Demo Video
 
-Watch a full demo of application in action:
+Watch a full demo of the application in action:
 
-[![Watch the demo]([https://www.youtube.com/watch?v=u00s7uuf_v0](https://www.youtube.com/watch?v=u00s7uuf_v0))
+[![Watch the demo](https://img.youtube.com/vi/u00s7uuf_v0/0.jpg)](https://www.youtube.com/watch?v=u00s7uuf_v0)
+
