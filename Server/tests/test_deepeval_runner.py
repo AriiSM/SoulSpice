@@ -12,9 +12,10 @@ from deepeval.metrics import (
 from app.services.llm_service import LLMService
 
 # COMENZI TERMINAL:
-# set OPENAI_API_KEY=
-# (optional) set OPENAI_ORG_ID=
-# am rulat cu deepeval test run tests\test_deepeval_runner.py din folderul Server
+# 1. set PYTHONPATH=.
+# 2. set OPENAI_API_KEY=
+# 3. (optional) set OPENAI_ORG_ID=
+# 4. am rulat cu: deepeval test run tests\test_deepeval_runner.py din folderul Server
 
 
 # 0. Initializeaza serviciul LLM local
