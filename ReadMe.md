@@ -134,9 +134,10 @@ SoulSpice/
     │   └── test_deepeval_runner.py    # DeepEval test runner
     └── main.py                        # Server entry point
 ```
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
+
+## Demo Video
+
+Watch a full demo of application in action:
+
+[![Watch the demo][(https://img.youtube.com/vi/LF4Od1_xNJ0/0.jpg)](https://youtu.be/LF4Od1_xNJ0?si=EfsfbodVwinB-98P)](https://www.youtube.com/watch?v=u00s7uuf_v0)
